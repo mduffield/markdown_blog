@@ -1,0 +1,8 @@
+          <div class="row-fluid marketing">
+            <div class="span12">
+              <?php foreach($this->posts as $date => $post): ?>    
+                <h4><?php echo $post->title ?></h4>
+                <p><?php echo $post->description ?></p>
+              <?php endforeach; ?>
+            </div>
+          </div>
