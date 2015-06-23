@@ -1,7 +1,7 @@
           <div class="row-fluid marketing">
             <div class="span12">
               <?php foreach($this->posts as $date => $post): ?>    
-                <h4><?php echo $post->title ?></h4>
+                <h4><a href="/<?php echo $post->url ?>"><?php echo $post->title ?></a></h4>
                 <p><?php echo $post->description ?></p>
               <?php endforeach; ?>
             </div>
