@@ -8,7 +8,8 @@ class Post{
     //Get/set metadata
     $this->title = str_replace("\n", "", $file[0]);
     $this->date = str_replace("\n", "", substr($file[1], 2));
-    $this->description = str_replace("\n", "", $file[2]);
+    $this->author = str_replace("\n", "", $file[2]);
+    $this->description = str_replace("\n", "", $file[3]);
     
     $components_of_date = explode("-", $this->date); //Explode to divide month and year
     //DIvide hour, minutes, day
@@ -22,6 +23,7 @@ class Post{
     $file[0] = "";
     $file[1] = "";
     $file[2] = "";
+    $file[3] = "";
     //Content
     $markdown = implode($file);
     $this->source = $markdown;

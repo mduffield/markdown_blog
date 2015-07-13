@@ -11,10 +11,10 @@ $main_view->ad_header = file_get_contents("ads/header.html");
 $main_view->ad_left_side = file_get_contents("ads/left.html");
 $main_view->ad_right_side = file_get_contents("ads/right.html");
 $main_view->company = "Test Company";
-$main_view->site_name = "Site name";
-$main_view->title = "Test Title";
-$main_view->main_header = "Main header";
-$main_view->lead_text = "Lead text goes here.  Can be somewhat long.";
+$main_view->site_name = "Site Name";
+$main_view->title = "Site Title";
+$main_view->main_header = "Main Header";
+$main_view->lead_text = "Leader text";
 
 if(isset($_GET['post']))
 {
@@ -22,6 +22,9 @@ if(isset($_GET['post']))
   if(file_exists("posts/" . $post_name))
   {
     $post = new Post($post_name);
+    $main_view->title .= " - ".$post->title;
+    $main_view->main_header = $post->title;
+    $main_view->lead_text = $post->description;
     $main_view->inner_content = $post->content;
   }
 }
